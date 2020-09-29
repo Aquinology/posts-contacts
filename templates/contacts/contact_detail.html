@@ -1,32 +1,42 @@
 {% extends 'blog/base.html' %}
 
     {% block title %}
-        {{ contact.last_name }} {{ ' ' }} {{ contact.first_name }}
+        {{ contact.last_name }} {{ contact.first_name }}
     {% endblock %}
 
     {% block content %}
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Фамилия</th>
-                <th scope="col">Имя</th>
-                <th scope="col">Отчество</th>
-                <th scope="col">Дата рождения</th>
-                <th scope="col">Телефон</th>
-                <th scope="col">Email</th>
-                <th scope="col">Страница в соц. сети</th>
-                <th scope="col">Описание</th>
-            </tr>
-            </thead>
+        <table class="table table-bordered">
             <tbody>
             <tr>
+                <td>Фамилия</td>
                 <td>{{ contact.last_name }}</td>
+            </tr>
+            <tr>
+                <td>Имя</td>
                 <td>{{ contact.first_name }}</td>
+            </tr>
+            <tr>
+                <td>Отчество</td>
                 <td>{{ contact.patronymic }}</td>
+            </tr>
+            <tr>
+                <td>Дата рождения</td>
                 <td>{{ contact.date_of_birth }}</td>
+            </tr>
+            <tr>
+                <td>Телефон</td>
                 <td>{{ contact.phone }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
                 <td>{{ contact.email }}</td>
+            </tr>
+            <tr>
+                <td>Страница в соц. сети</td>
                 <td>{{ contact.social_page_networks }}</td>
+            </tr>
+            <tr>
+                <td>Описание</td>
                 <td>{{ contact.deck }}</td>
             </tr>
             </tbody>

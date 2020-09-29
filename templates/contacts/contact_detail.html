@@ -1,4 +1,9 @@
-{% extends 'contacts/base.html' %}
+{% extends 'blog/base.html' %}
+
+    {% block title %}
+        {{ contact.last_name }} {{ ' ' }} {{ contact.first_name }}
+    {% endblock %}
+
     {% block content %}
         <table class="table">
             <thead>

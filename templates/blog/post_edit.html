@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
 
     {% block title %}
         Форма
@@ -7,15 +8,7 @@
     {% block content %}
 
         <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p }}
-            <div class="form-group">
-                <label for="exampleDefaultInput">Заголовок</label>
-                <input class="form-control" id="exampleDefaultInput" type="text">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Текст</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+            {{ form|crispy }}
             <button type="submit" class="btn btn-primary mb-2">Сохранить</button>
         </form>
 

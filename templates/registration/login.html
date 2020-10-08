@@ -2,14 +2,14 @@
 {% load crispy_forms_tags %}
 
     {% block title %}
-        Добавить пост
+        Вход
     {% endblock %}
 
     {% block content %}
 
         <form method="POST" class="post-form">{% csrf_token %}
-            {{ form|crispy }}
-            <button type="submit" class="btn btn-primary mb-2">Сохранить</button>
+          {{ form|crispy }}
+          <button type="submit" class="btn btn-primary mb-2">Вход</button>
         </form>
 
     {% endblock %}

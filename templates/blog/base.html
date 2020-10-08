@@ -38,7 +38,21 @@
                     </li>
                         {% if user.is_authenticated %}
                             <li class="nav-item">
-                                <a class="nav-link" href="{% url 'post_new' %}">Форма</a>
+                                <a class="nav-link" href="{% url 'post_new' %}">Добавить статью</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact_new' %}">Добавить контакт</a>
+                            </li>
+                        {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Вход</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'signup' %}">Регистрация</a>
+                    </li>
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">Выход</a>
                             </li>
                         {% endif %}
                     <li class="nav-item">
@@ -51,6 +65,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
+                <div class="alert alert-warning" role="alert">
+                    {% if user.is_authenticated %}
+                        <p>Привет, {{ user.username }}!</p>
+                    {% else %}
+                        <p>Авторизируйтесь пожалуйста!</p>
+                        <a href="{% url 'login' %}">Войти</a>
+                    {% endif %}
+                </div>
                 {% block content %}
                 {% endblock %}
             </div>

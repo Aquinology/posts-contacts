@@ -4,13 +4,26 @@
         Контакты
     {% endblock %}
 
-    {% block content %}
+    {% block new %}
 
         <ul class="list-group list-group-flush">
-            {% for contact in contacts %}
-                <li class="list-group-item">
-                    <a href="{% url 'contact_detail' pk=contact.pk %}">{{ contact.last_name }} {{ contact.first_name }}</a> - {{ contact.phone }}</li>
-            {% endfor %}
+            <li class="list-group-item">
+                <a href="{% url 'contact_new' %}">Добавить новый контакт</a>
+            </li>
         </ul>
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% for contact in contacts %}
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{% url 'contact_detail' pk=contact.pk %}">{{ contact.last_name }} {{ contact.first_name }}</a> - {{ contact.phone }}
+                </li>
+            </ul>
+
+        {% endfor %}
 
     {% endblock %}

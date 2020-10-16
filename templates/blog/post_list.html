@@ -4,6 +4,14 @@
         Статьи
     {% endblock %}
 
+    {% block new %}
+
+        <blockquote class="blockquote mb-0">
+            <a href="{% url 'post_new' %}">Добавить новую статью</a>
+        </blockquote>
+
+    {% endblock %}
+
     {% block content %}
         {% for post in posts %}
 
